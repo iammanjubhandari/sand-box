@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iammanjubhandari-nginx-loadbalacer-svc
+  labels:
+    app: nginx
+    owner: manju
+spec:
+  type: LoadBalancer   # AWS EKS will create load balacer
+  selector:
+    app: nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
