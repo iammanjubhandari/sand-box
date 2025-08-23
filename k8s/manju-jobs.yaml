@@ -1,11 +1,11 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ping
+  name: iammanjubhandari-ping
 spec:
   backoffLimit: 2                  # retry 2 times if Pod fails
   ttlSecondsAfterFinished: 60      # auto-cleanup after 60s
-  template:                       
+  template:                        # Pod template
     spec:
       restartPolicy: Never         # don't restart, create new Pod instead
       containers:
