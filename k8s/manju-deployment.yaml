@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iammanjubhandari-backend-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: iammanjubhandari-backend
+  template:
+    metadata:
+      labels:
+        app: backend 
+        env: dev
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 80
+          args:
+            - "/bin/sh"
+            - "-c"
+            - "echo 'Hello' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
+# Node Port Service - expose Deployment outside the cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-svc
+spec:
+  type: NodePort
+  selector:
+    app: backend
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30777
