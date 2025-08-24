@@ -7,7 +7,7 @@ metadata:
     owner: manju
     env: dev
 spec:
-  replicas: 2
+  replicas: 3 # running 3 pods for demo
   selector:
     matchLabels:
       app: iammanjubhandari-backend
@@ -36,10 +36,10 @@ metadata:
     owner: manju
     env: dev
 spec:
-  type: NodePort # exposes
+  type: NodePort 
   selector:
-    app: backend
+    app: iammanjubhandari-backend
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30777
+      nodePort: 30080
