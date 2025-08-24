@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        app: backend 
+        app: iammanjubhandari-backend 
         env: dev
     spec:
       containers:
@@ -25,18 +25,18 @@ spec:
           args:
             - "/bin/sh"
             - "-c"
-            - "echo 'Hello' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
+            - "echo 'Hello - This is manju's nginx backend' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"
 # Node Port Service - expose Deployment outside the cluster
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-svc
+  name: iammanjubhandari-backend-svc
   labels:
     project: manjus-lab
     owner: manju
     env: dev
 spec:
-  type: NodePort
+  type: NodePort # exposes
   selector:
     app: backend
   ports:
