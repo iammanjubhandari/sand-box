@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: backend-rs
+  labels:
+    project: manjus-lab
+    owner: manju
+    env: dev
 spec:
   replicas: 2
   selector:
@@ -13,6 +17,7 @@ spec:
           image: nginx:1.17
           ports:
             - containerPort: 80
+            args: ["echo", "Manju’s ReplicaSet pod!"]             
 ---            
 apiVersion: v1
 kind: Service
@@ -23,4 +28,7 @@ spec:
   selector:
     app: backend
   ports:
-      nodePort: 30077
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
