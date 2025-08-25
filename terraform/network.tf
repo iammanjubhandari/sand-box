@@ -9,8 +9,16 @@ resource "aws_vpc" "iammanjubhandari-vpc-sandbox" {
   }
 }
 
+resource "aws_subnet" "public_subnet" {
+  vpc_id                  = aws_vpc.iammanjubhandari-vpc-sandbox
+  cidr_block              = "10.50.1.0/24"
+  availability_zone       = "us-east-1a"
+  map_public_ip_on_launch = true
 
-
+  tags = {
+    Name = "iammanjubhandari-public-subnet-sandbox-us-east-1"
+  }
+}
 
 
 
