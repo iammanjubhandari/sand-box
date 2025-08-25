@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: backend-rs
+  name: iammanjubhandari-backend-rs
   labels:
     project: manjus-lab
     owner: manju
@@ -10,7 +10,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend
+      app: iammanjubhandari-backend
     spec:
       containers:
         - name: nginx
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-svc
+  name: iammanjubhandari-backend-svc
 spec:
   type: NodePort
   selector:
-    app: backend
+    app: iammanjubhandari-backend
   ports:
     - protocol: TCP
       port: 80
