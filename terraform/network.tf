@@ -79,7 +79,6 @@ resource "aws_security_group" "iammanjubhandari-sandbox-sg" {
   }
 }
 
-
 resource "aws_eip" "iammanjubhandari-eip" {
   vpc = true
 }
