@@ -20,3 +20,5 @@ resource "aws_instance" "iammanjubhandari-ec2instance" {
     Env  = "sandbox"
   }
 }
+
+

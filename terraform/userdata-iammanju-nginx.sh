@@ -22,7 +22,7 @@ cat <<EOF > /var/www/html/index.nginx-debian.html
     </style>
 </head>
 <body>
-    <h1>🚀 Welcome to my AWS Sandbox</h1>
+    <h1> Welcome to my AWS Sandbox - iammanjubhandari</h1>
     <h2>AWS Infra created using <b>Terraform</b> in <b>ap-southeast-2 (Sydney) Region</b></h2>
     <p>This EC2 instance was provisioned automatically with Terraform and bootstrapped using <code>user_data</code>.</p>
     <p>Web server: <b>Nginx</b> running on Ubuntu 22.04</p>

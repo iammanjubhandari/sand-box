@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: manju-nginx-clusterip-svc
+  name: iammanjubhandari-nginx-clusterip-svc
   labels:
     app: nginx
     owner:manju
@@ -12,4 +12,4 @@ spec:
   ports:
     - name: http
       port: 80     #  Serive port 
-      targetPort: 80 #nginx listening on 80
+      targetPort: 80 # nginx listening on 80

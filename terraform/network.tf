@@ -21,7 +21,7 @@ resource "aws_subnet" "public_subnet" {
 }
 
 resource "aws_subnet" "private_subnet" {
-  vpc_id            = aws_vpc.iammanjubhandari-vpc-sandbox
+  vpc_id            = aws_vpc.iammanjubhandari-vpc-sandbox.id
   cidr_block        = "10.50.2.0/24"
   availability_zone = "us-east-1a"
 
