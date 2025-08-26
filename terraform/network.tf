@@ -78,3 +78,13 @@ resource "aws_security_group" "iammanjubhandari-sandbox-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+
+resource "aws_eip" "iammanjubhandari-eip" {
+  vpc = true
+}
+
+resource "aws_eip_association" "iammanjubhandari-eip-assoc" {
+  instance_id   = aws_instance.iammanjubhandari-ec2instance.id
+  allocation_id = aws_eip.iammanjubhandari-eip.id
+}
